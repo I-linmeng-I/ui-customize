@@ -11,7 +11,7 @@ namespace ui自定义工具
     public class PickBox
     {
         //////////////////////////////////////////////////////////////////  
-        // PRIVATE CONSTANTS AND VARIABLES  
+        // PRIVATE CONSTANTS AND VARIABLES  123
         //////////////////////////////////////////////////////////////////  
         private const int BOX_SIZE = 8;
         private Color BOX_COLOR = Color.White;
