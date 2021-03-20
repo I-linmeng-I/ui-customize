@@ -39,7 +39,6 @@
             this.导出为ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.导出为ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ImageEditPannel = new System.Windows.Forms.Panel();
-            this.EditImage = new System.Windows.Forms.Button();
             this.ImageSize_Y = new System.Windows.Forms.TextBox();
             this.ImageSize_X = new System.Windows.Forms.TextBox();
             this.ImageLocation_Y = new System.Windows.Forms.TextBox();
@@ -126,26 +125,15 @@
             // ImageEditPannel
             // 
             this.ImageEditPannel.BackColor = System.Drawing.Color.White;
-            this.ImageEditPannel.Controls.Add(this.EditImage);
             this.ImageEditPannel.Controls.Add(this.ImageSize_Y);
             this.ImageEditPannel.Controls.Add(this.ImageSize_X);
             this.ImageEditPannel.Controls.Add(this.ImageLocation_Y);
             this.ImageEditPannel.Controls.Add(this.ImageLocation_X);
             this.ImageEditPannel.Location = new System.Drawing.Point(1279, 100);
             this.ImageEditPannel.Name = "ImageEditPannel";
-            this.ImageEditPannel.Size = new System.Drawing.Size(321, 800);
+            this.ImageEditPannel.Size = new System.Drawing.Size(218, 57);
             this.ImageEditPannel.TabIndex = 2;
             this.ImageEditPannel.Visible = false;
-            // 
-            // EditImage
-            // 
-            this.EditImage.Location = new System.Drawing.Point(7, 57);
-            this.EditImage.Name = "EditImage";
-            this.EditImage.Size = new System.Drawing.Size(75, 23);
-            this.EditImage.TabIndex = 4;
-            this.EditImage.Text = "编辑图片";
-            this.EditImage.UseVisualStyleBackColor = true;
-            this.EditImage.Click += new System.EventHandler(this.EditImage_Click);
             // 
             // ImageSize_Y
             // 
@@ -178,6 +166,7 @@
             this.ImageLocation_X.Size = new System.Drawing.Size(100, 21);
             this.ImageLocation_X.TabIndex = 0;
             this.ImageLocation_X.Text = "X";
+            this.ImageLocation_X.TextChanged += new System.EventHandler(this.ImageLocation_X_TextChanged);
             // 
             // Form1
             // 
@@ -214,7 +203,6 @@
         private System.Windows.Forms.ToolStripMenuItem 导出为ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 导出为ToolStripMenuItem1;
         private System.Windows.Forms.Panel ImageEditPannel;
-        private System.Windows.Forms.Button EditImage;
         private System.Windows.Forms.TextBox ImageSize_Y;
         private System.Windows.Forms.TextBox ImageSize_X;
         private System.Windows.Forms.TextBox ImageLocation_Y;
