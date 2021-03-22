@@ -12,6 +12,7 @@ namespace ui自定义工具
 {
     public partial class Form1 : Form
     {
+        FunctionClass fuctions = new FunctionClass();
         Images luaimages = new Images();
         public Form1()
         {
@@ -20,7 +21,8 @@ namespace ui自定义工具
         
         private void Form1_Load(object sender, EventArgs e)
         {
-            luaimages.DrawLuaInformation(panel1);
+            luaimages.InitClass();
+            fuctions.GetLuaInfo();
             //pickBox.WireControl(button1);
         }
 

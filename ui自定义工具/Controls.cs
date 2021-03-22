@@ -26,6 +26,41 @@ namespace ui自定义工具
         public void DrawLuaInformation(Control panel)
         {
             panel.Click += ClickPanel;
+            //获得lua信息
+            //getinfo(获得了lua的信息）
+            //添加进图片信息list
+            LuaImageInfo info = new LuaImageInfo();
+            info.ImageName = "控件名";
+            info.Image = Image.FromFile(@"1.png");
+            info.ImageLocation_X = 0;
+            info.ImageLocation_Y = 0;
+            info.ImagePath = "1.png";
+            info.ImageSize_X = 100;
+            info.ImageSize_Y = 100;
+            info.parent = panel;
+            luaImageInfos.Add(info);
+
+            //生成picturebox
+            PictureBox chache = info.InitializePictureBox();
+            chache.ContextMenuStrip = contextMenuStrip;
+
+            //添加事件函数和右键菜单
+            chache.Click += this.ImageClick;
+
+
+            //添加图片控件进list
+            LuaImages.Add(chache);
+
+            //生成
+            info.parent.Controls.Add(chache);
+
+        }
+        
+        /// <summary>
+        /// 初始化类
+        /// </summary>
+        public void InitClass()
+        {
             //右键菜单内容
             {
                 ToolStripMenuItem abc = new ToolStripMenuItem();
@@ -37,39 +72,7 @@ namespace ui自定义工具
                 contextMenuStrip.Opening += this.OpenningRightClickMenu;
                 abc.DropDownItems[0].Click += this.RightClickMenuClick;
             }
-            //获得lua信息
-            //getinfo(获得了lua的信息）
-            for(int i = 0; i < 100; i++)
-            {
-                //添加进图片信息list
-                LuaImageInfo info = new LuaImageInfo();
-                info.ImageName = "控件名";
-                info.Image = Image.FromFile(@"1.png");
-                info.ImageLocation_X = 0;
-                info.ImageLocation_Y = 0;
-                info.ImagePath = "1.png";
-                info.ImageSize_X = 100;
-                info.ImageSize_Y = 100;
-                info.parent = panel;
-                luaImageInfos.Add(info);
-
-                //生成picturebox
-                PictureBox chache = info.InitializePictureBox();
-                chache.ContextMenuStrip = contextMenuStrip;
-
-                //添加事件函数和右键菜单
-                chache.Click += this.ImageClick;
-
-
-                //添加图片控件进list
-                LuaImages.Add(chache);
-
-                //生成
-                info.parent.Controls.Add(LuaImages[i]);
-            }
-            
         }
-        
 
         private void ImageClick(object sender, EventArgs e)
         {
